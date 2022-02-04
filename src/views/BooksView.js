@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link, useMatch } from 'react-router-dom';
 import * as bookShelfAPI from '../services/bookshelf-api';
 import PageHeading from '../components/PageHeading/PageHeading';
 
 export default function BooksView() {
-  const { url } = useRouteMatch();
+  const { url } = useMatch();
   const [books, setBooks] = useState(null);
 
   useEffect(() => {

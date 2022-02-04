@@ -4,26 +4,29 @@ import styles from './Navigation.module.css';
 const Navigation = () => (
   <nav>
     <NavLink
-      exact
+      end
       to="/"
-      className={styles.link}
-      activeClassName={styles.activeLink}
+      // style={styles.link}
+      // activeStyle={styles.activeLink}
+      style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
     >
       Главная
     </NavLink>
 
     <NavLink
       to="/authors"
-      className={styles.link}
-      activeClassName={styles.activeLink}
+      // style={styles.link}
+      // activeStyle={styles.activeLink}
+      style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
     >
       Авторы
     </NavLink>
 
     <NavLink
       to="/books"
-      className={styles.link}
-      activeClassName={styles.activeLink}
+      // style={styles.link}
+      // activeStyle={styles.activeLink}
+      style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
     >
       Книги
     </NavLink>

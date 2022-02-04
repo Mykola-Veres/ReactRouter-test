@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import AppBar from './components/AppBar/AppBar';
 import Container from './components/Container/Container';
 import HomeView from './views/HomeView';
@@ -12,27 +12,27 @@ export default function App() {
     <Container>
       <AppBar />
 
-      <Switch>
-        <Route path="/" exact>
-          <HomeView />
+      <Routes>
+        <Route path="/" element={<HomeView />}>
+          
         </Route>
 
-        <Route path="/authors">
-          <AuthorsView />
+        <Route path="/authors" element={<AuthorsView />}>
+          
         </Route>
 
-        <Route path="/books" exact>
-          <BooksView />
+        <Route path="/books" element={<BooksView />}>
+          
         </Route>
 
-        <Route path="/books/:bookId">
-          <BookDetailsView />
+        <Route path="/books/:bookId" element={<BookDetailsView />}>
+          
         </Route>
 
-        <Route>
-          <NotFoundView />
+        <Route element={<NotFoundView />}>
+          
         </Route>
-      </Switch>
+      </Routes>
     </Container>
   );
 }

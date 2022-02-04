@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { NavLink, Route, useRouteMatch } from 'react-router-dom';
+import { NavLink, Route, useMatch } from 'react-router-dom';
 import * as bookShelfAPI from '../services/bookshelf-api';
 import PageHeading from '../components/PageHeading/PageHeading';
 import AuthorSubView from './AuthorSubView';
 
 export default function AuthorsView() {
-  const { url, path } = useRouteMatch();
+  const { url, path } = useMatch();
   const [authors, setAuthors] = useState(null);
 
   useEffect(() => {
